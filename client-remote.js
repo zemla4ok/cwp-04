@@ -21,7 +21,7 @@ client.on('data', (data) => {
     }
     else if(data === goodResp){
         client.write('COPY C:\\Users\\Dmitry\\Desktop\\cw4\\original.txt C:\\Users\\Dmitry\\Desktop\\cw4\\copy.txt');
-        client.write('ENCODE C:\\Users\\Dmitry\\Desktop\\cw4\\original.txt C:\\Users\\Dmitry\\Desktop\\cw4\\copy.txt 123');
+        client.write('ENCODE C:\\Users\\Dmitry\\Desktop\\cw4\\original.txt C:\\Users\\Dmitry\\Desktop\\cw4\\encode.txt 123');
     }
 });
 

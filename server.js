@@ -1,10 +1,13 @@
 const net = require('net');
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 const port = 8124;
 
 const reqRemote = 'REMOTE';
-const reqRemCopy = 'COPY'
+const reqRemCopy = 'COPY';
+const reqRemEncode = 'ENCODE';
+const algorithm = 'aes-128-cbc';
 const reqFiles = 'FILES';
 const reqQA = 'QA';
 const resGood = 'ACK';
@@ -74,12 +77,15 @@ const server = net.createServer((client) => {
         }
         if(clients[client.id] === reqRemote && data !== reqRemote){
             let remoting = data.split(' ');
+            let rd = fs.createReadStream(remoting[1]);
+            let wr = fs.createWriteStream(remoting[2]);
             if(remoting[0] === reqRemCopy){
-                let rd = fs.createReadStream(remoting[1]);
-                let wr = fs.createWriteStream(remoting[2]);
                 rd.pipe(wr);
             }
-            if(remoting[0] ===)
+            if(remoting[0] === reqRemEncode){
+                let cryptoStream = crypto.createCipher(algorithm, remoting[3]);
+                rd.pipe(cryptoStream).pipe(wr);
+            }
 
         }
     });
