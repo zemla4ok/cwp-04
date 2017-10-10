@@ -7,6 +7,7 @@ const port = 8124;
 const reqRemote = 'REMOTE';
 const reqRemCopy = 'COPY';
 const reqRemEncode = 'ENCODE';
+const reqRemDecode = 'DECODE';
 const algorithm = 'aes-128-cbc';
 const reqFiles = 'FILES';
 const reqQA = 'QA';
@@ -76,6 +77,7 @@ const server = net.createServer((client) => {
             }
         }
         if(clients[client.id] === reqRemote && data !== reqRemote){
+            console.log(data);
             let remoting = data.split(' ');
             let rd = fs.createReadStream(remoting[1]);
             let wr = fs.createWriteStream(remoting[2]);
@@ -86,7 +88,11 @@ const server = net.createServer((client) => {
                 let cryptoStream = crypto.createCipher(algorithm, remoting[3]);
                 rd.pipe(cryptoStream).pipe(wr);
             }
-
+            if(remoting[0] === reqRemDecode){
+                let cryptoStream = crypto.createDecipher(algorithm, remoting[3]);
+                rd.pipe(cryptoStream).pipe(wr);
+            }
+            client.write(resGood);
         }
     });
 

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4cbff9a8-8460-46e4-911f-4ee6f57c799a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client-remote.js" afterPath="$PROJECT_DIR$/client-remote.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,11 +20,11 @@
       <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="87" column="13" lean-forward="true" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
+            <state relative-caret-position="68">
+              <caret line="82" column="55" lean-forward="false" selection-start-line="82" selection-start-column="55" selection-end-line="82" selection-end-column="55" />
               <folding>
-                <element signature="e#2924#3011#0" expanded="false" />
-                <element signature="e#3045#3106#0" expanded="false" />
+                <element signature="e#3210#3297#0" expanded="false" />
+                <element signature="e#3331#3392#0" expanded="false" />
                 <element signature="n#!!block;n#getUniqID#0" expanded="false" />
                 <element signature="n#!!block;n#getQuestionId#0" expanded="false" />
                 <element signature="n#!!block;n#answerTheQuestion#0" expanded="false" />
@@ -35,8 +36,8 @@
       <file leaf-file-name="client-remote.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client-remote.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="24" column="63" lean-forward="false" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="63" />
+            <state relative-caret-position="170">
+              <caret line="43" column="110" lean-forward="true" selection-start-line="43" selection-start-column="110" selection-end-line="43" selection-end-column="110" />
               <folding />
             </state>
           </provider>
@@ -151,12 +152,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1507664950354</updated>
-      <workItem from="1507664954189" duration="2580000" />
+      <workItem from="1507664954189" duration="5474000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2580000" />
+    <option name="totallyTimeSpent" value="5474000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -209,11 +210,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="87" column="13" lean-forward="true" selection-start-line="87" selection-start-column="13" selection-end-line="87" selection-end-column="13" />
+        <state relative-caret-position="68">
+          <caret line="82" column="55" lean-forward="false" selection-start-line="82" selection-start-column="55" selection-end-line="82" selection-end-column="55" />
           <folding>
-            <element signature="e#2924#3011#0" expanded="false" />
-            <element signature="e#3045#3106#0" expanded="false" />
+            <element signature="e#3210#3297#0" expanded="false" />
+            <element signature="e#3331#3392#0" expanded="false" />
             <element signature="n#!!block;n#getUniqID#0" expanded="false" />
             <element signature="n#!!block;n#getQuestionId#0" expanded="false" />
             <element signature="n#!!block;n#answerTheQuestion#0" expanded="false" />
@@ -223,8 +224,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client-remote.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="24" column="63" lean-forward="false" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="63" />
+        <state relative-caret-position="170">
+          <caret line="43" column="110" lean-forward="true" selection-start-line="43" selection-start-column="110" selection-end-line="43" selection-end-column="110" />
           <folding />
         </state>
       </provider>
