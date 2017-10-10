@@ -75,11 +75,11 @@ const server = net.createServer((client) => {
         if(clients[client.id] === reqRemote && data !== reqRemote){
             let remoting = data.split(' ');
             if(remoting[0] === reqRemCopy){
-                console.log(remoting);
                 let rd = fs.createReadStream(remoting[1]);
                 let wr = fs.createWriteStream(remoting[2]);
                 rd.pipe(wr);
             }
+            if(remoting[0] ===)
 
         }
     });
