@@ -4,12 +4,12 @@ const path = require('path');
 const port = 8124;
 
 const reqRemote = 'REMOTE';
+const reqRemCopy = 'COPY'
 const reqFiles = 'FILES';
 const reqQA = 'QA';
 const resGood = 'ACK';
 const resBad = 'DEC';
 const resFiles = 'NEXT';
-const EOF = 'EOF';
 const defaultDir = process.env.FILES_DIR;
 const maxConn = parseInt(process.env.CONN);
 
@@ -73,7 +73,14 @@ const server = net.createServer((client) => {
             }
         }
         if(clients[client.id] === reqRemote && data !== reqRemote){
-            console.log(data);
+            let remoting = data.split(' ');
+            if(remoting[0] === reqRemCopy){
+                console.log(remoting);
+                let rd = fs.createReadStream(remoting[1]);
+                let wr = fs.createWriteStream(remoting[2]);
+                rd.pipe(wr);
+            }
+
         }
     });
 

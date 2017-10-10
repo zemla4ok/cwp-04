@@ -20,7 +20,8 @@ client.on('data', (data) => {
         client.destroy();
     }
     else if(data === goodResp){
-        client.write('zek');
+        client.write('COPY C:\\Users\\Dmitry\\Desktop\\cw4\\original.txt C:\\Users\\Dmitry\\Desktop\\cw4\\copy.txt');
+        
     }
 });
 
