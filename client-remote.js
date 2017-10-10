@@ -4,6 +4,8 @@ const path = require("path");
 const port = 8124;
 const client = new net.Socket();
 const reqRemote = 'REMOTE';
+const goodResp = 'ACK';
+const badResp = 'DEC';
 
 client.setEncoding('utf8');
 
@@ -14,6 +16,12 @@ client.connect(port, () => {
 
 client.on('data', (data) => {
     console.log(data);
+    if(data === badResp){
+        client.destroy();
+    }
+    else if(data === goodResp){
+        client.write('zek');
+    }
 });
 
 client.on('close', function () {

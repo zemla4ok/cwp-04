@@ -72,6 +72,9 @@ const server = net.createServer((client) => {
                 client.write(resFiles);
             }
         }
+        if(clients[client.id] === reqRemote && data !== reqRemote){
+            console.log(data);
+        }
     });
 
     client.on('end', () => {
