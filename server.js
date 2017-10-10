@@ -3,6 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const port = 8124;
 
+const reqRemote = 'REMOTE';
 const reqFiles = 'FILES';
 const reqQA = 'QA';
 const resGood = 'ACK';
@@ -28,7 +29,7 @@ const server = net.createServer((client) => {
     client.setEncoding('utf8');
 
     client.on('data', (data) => {
-        if (data === reqFiles || data === reqQA) {
+        if (data === reqFiles || data === reqQA || data === reqRemote) {
             client.id = getUniqID();
             if (data === reqFiles) {
                 files[client.id] = [];
