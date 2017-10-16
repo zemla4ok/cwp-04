@@ -41,7 +41,7 @@ function sendCOPY() {
     client.write('COPY C:\\Users\\Dmitry\\Desktop\\cw4\\original.txt C:\\Users\\Dmitry\\Desktop\\cw4\\copy.txt');
 }
 function sendENCODE() {
-    client.write('ENCODE C:\\Users\\Dmitry\\Desktop\\cw4\\original.txt C:\\Users\\Dmitry\\Desktop\\cw4\\encode1.txt 123');
+    client.write('ENCODE C:\\Users\\Dmitry\\Desktop\\cw4\\original.txt C:\\Users\\Dmitry\\Desktop\\cw4\\encode.txt 123');
 }
 function sendDECODE() {
     client.write('DECODE C:\\Users\\Dmitry\\Desktop\\cw4\\encode.txt C:\\Users\\Dmitry\\Desktop\\cw4\\decode.txt 123');

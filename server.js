@@ -82,20 +82,21 @@ const server = net.createServer((client) => {
             let rd = fs.createReadStream(remoting[1]);
             let wr = fs.createWriteStream(remoting[2]);
             if(remoting[0] === reqRemCopy){
-                rd.pipe(wr);
+                rd.pipe(wr).on('close', sendNext);
             }
             if(remoting[0] === reqRemEncode){
                 let cryptoStream = crypto.createCipher(algorithm, remoting[3]);
-                rd.pipe(cryptoStream).pipe(wr);
+                rd.pipe(cryptoStream).pipe(wr).on('close', sendNext);
             }
             if(remoting[0] === reqRemDecode){
                 let cryptoStream = crypto.createDecipher(algorithm, remoting[3]);
-                rd.pipe(cryptoStream).pipe(wr);
+                rd.pipe(cryptoStream).pipe(wr).on('close', sendNext);
             }
-            client.write(resGood);
         }
     });
-
+    function sendNext() {
+        client.write(resGood);
+    }
     client.on('end', () => {
         connections--;
         console.log(`Client ${client.id} disconnected`);
